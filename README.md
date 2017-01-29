@@ -10,7 +10,7 @@ $ npm i
 # Configure
 Edit file `database.json`
 
-# Runing
+# Running
 
 ```
 $ db-migrate up:v1
