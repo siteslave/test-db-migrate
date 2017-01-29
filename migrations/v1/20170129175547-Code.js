@@ -15,26 +15,33 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function (db, callback) {
-  db.createTable('VTMtoGP', {
-    VTMID: {
+  db.createTable('tbCode', {
+    strCodeID: {
       type: 'char',
       primaryKey: true,
-      length: 6,
+      length: 10,
       notNull: true
     },
-    GPID: {
-      type: 'char',
-      length: 6,
-      notNull: true,
-      primaryKey: true
+    strCodeName: {
+      type: 'string',
+      length: 200,
+      notNull: true
+    },
+    strOriganization: {
+      type: 'string',
+      length: 200,
+      notNull: false
+    },
+    blnActive: {
+      type: 'boolean',
+      notNull: true
     }
   }, callback);
 };
 
 exports.down = function (db, callback) {
-  db.dropTable('VTMtoGP', callback);
+  db.dropTable('tbCode', callback);
 };
-
 exports._meta = {
   "version": 1
 };
